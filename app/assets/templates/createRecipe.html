@@ -1,0 +1,40 @@
+
+
+  <div ng-controller='recipesController'>
+    <form novalidate class="recipe-form form-inline" name="recipeForm">
+     <label for='recipeName'> Recipe Name: </label>
+     <input type="text" class="form-control recipeName" ng-model="recipe.name">
+     <input type="text" class="form-control servingInput" placeholder="Serving Size"ng-model="recipe.serving"><br /><br />
+     <label for="ingredient">Ingredients: </label><br/>
+     <div class="form-group" data-ng-repeat="ingredient in recipe.ingredients">
+       <input type="text" class="ingredientInput form-control" ng-model="ingredient.name" name="" placeholder="Enter an ingredient">
+       <input type="text" class="measurementInput form-control" ng-model='ingredient.measurement' placeholder='Enter a measurement'>
+       <input type="text" class="measurementInput form-control" ng-model='ingredient.unit' placeholder='Enter the unit'>
+       <button ng-show="$last" ng-click="addNewIngredient()" class="btn btn-default">Add another ingredient</button>
+       <br />
+     </div>
+     <br />
+     <label for='instructions'>Instructions: </label> <br/>
+     <textarea class="form-control instructions" rows='5' ng-model="recipe.instructions"></textarea><br/>
+     <input type="submit" ng-click="addRecipe(recipe)" class="btn btn-default" value="Save" />
+   </form>
+   <div class="previewContainer">
+   <h4 class="subTitle">Preview</h4>
+    <h3 class="receipeName subTitle">{{recipe.name}}</h3>
+    <table class="ingredientsList table table-striped table-bordered">
+      <thead>
+        <th>Ingredient</th>
+        <th>Measurement</th>
+        <th>Unit</th>
+      </thead>
+      <tr data-ng-repeat="ingredient in recipe.ingredients">
+        <td class="singleIngredient">{{ingredient.name}}</td>
+        <td class="singleMeasure">{{ingredient.measurement}}</td>
+        <td class="singleMeasure">{{ingredient.unit}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <label for='instructions' class="non-formLabel">Instructions: </label> <br/>
+  <textarea class="instructionsOutput" rows='5'>{{recipe.instructions}}</textarea>
+</div>
+

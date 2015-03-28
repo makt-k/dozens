@@ -1,0 +1,14 @@
+<div class="col-md-8">
+  <h3 class="subTitle">Your Recipes</h3>
+  </div>
+ <div class="col-md-4">
+    <label for="search">Search by ingredient:</label><input type="text" class="form-control" ng-model="ingredients">
+  </div>
+<div class="margins" ng-controller='masterlistController'>
+  <div class="listContainer" ng-repeat="recipe in recipes | filter: ingredients">
+     <div class="col-md-6"><p class="recipeTitle">{{recipe.name}}</p></div>
+     <div class="col-md-6"><a ng-click="" class="btn btn-sm btn-default">View Receipe</a></div>
+     <br />
+   </div>
+</div>
+

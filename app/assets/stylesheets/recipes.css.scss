@@ -1,0 +1,110 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-form {
+  padding:20px;
+}
+
+input.ingredientInput {
+  margin: 10px;
+  min-width: 400px;
+  line-height: 25px;
+}
+
+input.measurementInput {
+  min-width:200px;
+}
+
+input.recipeName {
+  min-width: 540px;
+}
+
+.instructions {
+  min-width: 835px;
+  margin-bottom: 10px;
+}
+
+.instructionsOutput{
+  min-width: 835px;
+  margin-bottom: 10px;
+  border: none;
+  padding-left: 20px;
+}
+
+.non-formLabel {
+  padding-left: 20px;
+}
+
+.receipeName {
+  color: #5C4033;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+.singleIngredient .singleMeasurement{
+  color: #5C4033;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+button {
+  padding: 10px;
+}
+
+label {
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+table.ingredientsList {
+  width:835px;
+  margin:20px;
+  tbody tr td {
+    height: 25px;
+  }
+}
+
+div#navbar {
+  margin-bottom: 5px;
+}
+
+.previewContainer {
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+}
+
+.listContainer {
+  padding-left: 20px;
+}
+
+.subTitle {
+  margin-left:20px;
+}
+
+div#navbar {
+  margin-bottom: 5px;
+}
+
+nav.navbar-default {
+  margin-bottom: 0px;
+}
+
+#homebody {
+  background: url(../images/placeholderBread.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 1390px;
+  height:700px;
+}
+
+div.margins {
+  margin: 20px;
+}
+
+p.recipeTitle {
+  font-family:Helvetica, Arial, sans-serif;
+  color: #5C4033;
+  font-size: 14px;
+}
