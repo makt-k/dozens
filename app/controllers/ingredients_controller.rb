@@ -29,7 +29,7 @@ class IngredientsController < ApplicationController
     respond_to do |format|
       if @ingredient.save
         format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ingredient }
+        format.json { render :json => @ingredient.as_json }
       else
         format.html { render action: 'new' }
         format.json { render json: @ingredient.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:recipe_id, :name, :measurement, :unit)
+      params.require(:ingredient).permit(:name, :measurement, :unit)
     end
 end

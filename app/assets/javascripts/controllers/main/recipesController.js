@@ -1,20 +1,21 @@
-
-var recipesController = function($scope, $location, $http, recipeData) {
-
+var recipesController = function($scope, $location, $http, jsonData) {
   $scope.recipe = {};
-
-  $scope.recipe.ingredients = [{id: 'ingredient1'}, {id: 'ingredient2'}, {id: 'ingredient3'}, {id: 'ingredient4'}, {id: 'ingredient5'}];
+  $scope.recipe.ingredients = [
+    {key: 1}, {key: 2}, {key:3}
+  ];
 
   $scope.addNewIngredient = function() {
       var newItemNo = $scope.recipe.ingredients.length+1;
-      $scope.recipe.ingredients.push({'id':'ingredient'+newItemNo});
-  };
-  $scope.showAddIngredient = function(ingredient) {
-   return ingredient.id === $scope.recipe.ingridents[0].id;
+      $scope.recipe.ingredients.push({'key':newItemNo});
   };
 
   $scope.addRecipe = function(recipe){
-   return recipeData.createRecipe(recipe);
-  }
+    var ingredients = recipe.ingredients;
+    for(var i = 0; i < ingredients.length; i++){
+      var ingredient = ingredients[i];
+      jsonData.createIngredient(ingredient);
+    };
 
+   jsonData.createRecipe(recipe);
+  }
 };

@@ -1,5 +1,5 @@
 
-var masterListController = function($scope, $location, $http, recipeData) {
+var masterListController = function($scope, $location, $http, jsonData) {
 
   $scope.data = {};
 
